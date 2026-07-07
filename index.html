@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hologram Tree</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <video id="webcam" autoplay playsinline muted></video>
+  <canvas id="scene"></canvas>
+
+  <div id="hud">
+    <div class="hud-row"><span class="hud-label">СТАТУС</span><span id="hud-state">ЗАГРУЗКА…</span></div>
+    <div class="hud-row"><span class="hud-label">РУКА</span><span id="hud-hand">—</span></div>
+    <div class="hud-row"><span class="hud-label">ЖЕСТ</span><span id="hud-gesture">—</span></div>
+  </div>
+
+  <div id="help">
+    <div>✊→🖐&nbsp; раскрыть кулак / развести сложенные ладони / 🫰 — посеять дерево</div>
+    <div>🖐⬇&nbsp; смахнуть ладонь вниз — погасить</div>
+    <div>✊→🖐&nbsp; раскрыть ладонь — рассыпать в частицы</div>
+    <div>✊&nbsp; сжать руку у корня — схватить семя и тянуть…</div>
+    <div>🖐&nbsp; раскрыть ладонь после — возродить</div>
+  </div>
+
+  <div id="handdot"></div>
+
+  <div id="loader">
+    <div class="spinner"></div>
+    <div id="loader-text">Загрузка нейронки трекинга рук…</div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
